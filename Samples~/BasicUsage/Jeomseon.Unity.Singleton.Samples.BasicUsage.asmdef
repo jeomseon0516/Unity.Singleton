@@ -1,5 +1,6 @@
 {
   "name": "Jeomseon.Unity.Singleton.Samples.BasicUsage",
+  "rootNamespace": "Jeomseon.Samples.Singleton",
   "references": [
     "Jeomseon.Unity.Singleton"
   ]

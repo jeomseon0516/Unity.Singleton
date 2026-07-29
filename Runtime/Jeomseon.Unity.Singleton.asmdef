@@ -1,6 +1,6 @@
 {
   "name": "Jeomseon.Unity.Singleton",
-  "rootNamespace": "Jeomseon",
+  "rootNamespace": "Jeomseon.Singleton",
   "references": [],
   "includePlatforms": [],
   "excludePlatforms": [],
