@@ -1,5 +1,9 @@
 # 변경 기록
 
+## [0.1.1] - 2026-07-29
+
+- MonoBehaviour Singleton 초기화를 확인하는 `Basic Usage` 샘플을 추가했습니다.
+
 ## [Unreleased]
 
 ### Documentation

@@ -1,6 +1,6 @@
 {
   "name": "com.jeomseon.unity.singleton",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Jeomseon Unity Singleton",
   "description": "Scene, persistent MonoBehaviour, and ScriptableObject singleton base types for Unity projects.",
   "unity": "2022.3",
@@ -20,5 +20,12 @@
     "url": "https://github.com/jeomseon0516/Unity.Singleton.git"
   },
   "changelogUrl": "https://github.com/jeomseon0516/Unity.Singleton/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/jeomseon0516/Unity.Singleton/blob/main/LICENSE.md"
+  "licensesUrl": "https://github.com/jeomseon0516/Unity.Singleton/blob/main/LICENSE.md",
+  "samples": [
+    {
+      "displayName": "Basic Usage",
+      "description": "패키지 핵심 API를 확인하는 최소 사용 예제입니다.",
+      "path": "Samples~/BasicUsage"
+    }
+  ]
 }

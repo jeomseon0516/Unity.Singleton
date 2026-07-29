@@ -19,7 +19,7 @@ JeomseonScriptPack의 Singleton 기능을 독립된 Unity Package Manager 패키
 ## Git URL로 설치
 
 ```text
-https://github.com/jeomseon0516/Unity.Singleton.git#v0.1.0
+https://github.com/jeomseon0516/Unity.Singleton.git#v0.1.1
 ```
 
 ## 포함 기능
