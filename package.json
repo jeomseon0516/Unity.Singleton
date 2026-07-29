@@ -1,0 +1,24 @@
+{
+  "name": "com.jeomseon.unity.singleton",
+  "version": "0.1.0",
+  "displayName": "Jeomseon Unity Singleton",
+  "description": "Scene, persistent MonoBehaviour, and ScriptableObject singleton base types for Unity projects.",
+  "unity": "2022.3",
+  "dependencies": {},
+  "author": {
+    "name": "jeomseon0516",
+    "url": "https://github.com/jeomseon0516"
+  },
+  "keywords": [
+    "jeomseon",
+    "singleton",
+    "utilities"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeomseon0516/Unity.Singleton.git"
+  },
+  "changelogUrl": "https://github.com/jeomseon0516/Unity.Singleton/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/jeomseon0516/Unity.Singleton/blob/main/LICENSE.md"
+}

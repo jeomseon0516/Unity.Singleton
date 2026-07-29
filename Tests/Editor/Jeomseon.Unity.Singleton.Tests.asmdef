@@ -1,0 +1,21 @@
+{
+  "name": "Jeomseon.Unity.Singleton.Tests",
+  "rootNamespace": "Jeomseon.Tests",
+  "references": [
+    "Jeomseon.Unity.Singleton"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}
