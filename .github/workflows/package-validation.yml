@@ -1,0 +1,40 @@
+name: Package Validation
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate package
+        shell: bash
+        run: |
+          jq empty package.json
+          test "$(jq -r '.name' package.json)" = "com.jeomseon.unity.singleton"
+          test -f Runtime/Jeomseon.Unity.Singleton.asmdef
+          test -f README.md
+          test -f CHANGELOG.md
+          test -f LICENSE.md
+      - name: Validate release tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        run: |
+          test "$(jq -r '.version' package.json)" = "${GITHUB_REF_NAME#v}"
+      - name: Reject generated Unity directories
+        shell: bash
+        run: |
+          test ! -d Library
+          test ! -d Temp
+          test ! -d Obj
+          test ! -d Logs
+          test ! -d UserSettings
