@@ -4,7 +4,7 @@ Provides scene, persistent MonoBehaviour, and ScriptableObject singleton base ty
 
 ## Requirements
 
-- Unity 2022.3 or newer
+- Unity 6000.3.15f1 or newer
 
 ## Installation
 

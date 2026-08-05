@@ -8,10 +8,11 @@ using UnityEngine;
 
 namespace Jeomseon.Singleton
 {
-    // TODO(architecture): FILE_PATH 이름의 정적 필드를 리플렉션으로 찾는 규약을
-    // 명시적인 설정 에셋이나 어트리뷰트로 교체하고 Resources 의존성을 제거해야 합니다.
     public abstract class ScriptableObjectSingleton<T> : ScriptableObject where T : ScriptableObjectSingleton<T>
     {
+        /* TODO(P1-03, architecture): FILE_PATH 이름의 정적 필드를 리플렉션으로 찾는 규약을
+         * 명시적인 설정 에셋이나 어트리뷰트로 교체하고 Resources 의존성을 제거해야 합니다.
+         */
         public static T Instance => EnsureInstance();
         public static bool HasInstance => _instance != null;
 

@@ -2,9 +2,6 @@ using UnityEngine;
 
 namespace Jeomseon.Singleton
 {
-    // TODO(architecture): 전역 정적 인스턴스 검색과 자동 GameObject 생성을
-    // ScriptableObject 설정 또는 명시적인 부트스트랩 방식으로 대체할지 검토해야 합니다.
-    // Enter Play Mode Options에서 도메인 리로드를 끈 경우의 정적 상태 초기화도 지원해야 합니다.
     [DisallowMultipleComponent]
     public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {
@@ -12,6 +9,12 @@ namespace Jeomseon.Singleton
         private static bool _quitting;
         private bool _initialized;
 
+        /* TODO(P1-01, architecture): 전역 정적 인스턴스 검색과 자동 GameObject 생성을
+         * ScriptableObject 설정 또는 명시적인 부트스트랩 방식으로 대체할지 검토해야 합니다.
+         * Enter Play Mode Options에서 도메인 리로드를 끈 경우의 정적 상태 초기화도 지원해야 합니다.
+         * Project Settings에서 자동 생성 허용, DontDestroyOnLoad, 중복 처리와 초기화 순서를
+         * 타입별로 선택하게 하고 빌드 전 누락·중복 인스턴스를 검사하는 Editor 검증기를 제공합니다.
+         */
         public static T Instance
         {
             get
@@ -20,14 +23,9 @@ namespace Jeomseon.Singleton
 
                 if (_instance == null)
                 {
-                    // Unity 2020.1+ 에서는 비활성 포함 검색 오버로드가 있습니다.
-#if UNITY_2020_1_OR_NEWER
-                    var found = FindObjectsOfType<T>(true);
-#else
-                    // 구버전 대응: 에디터 프리팹까지 잡히는 건 주의가 필요합니다.
-                    // 필요시 아래 라인을 FindObjectOfType<T>()로 낮추고, 비활성 케이스는 설계로 회피하세요.
-                    var found = Resources.FindObjectsOfTypeAll<T>();
-#endif
+                    var found = FindObjectsByType<T>(
+                        FindObjectsInactive.Include,
+                        FindObjectsSortMode.None);
                     if (found != null && found.Length > 0)
                     {
                         _instance = found[0];
@@ -48,11 +46,9 @@ namespace Jeomseon.Singleton
         protected internal void Awake()
         {
             // 자신 포함 모든 중복 수집
-#if UNITY_2020_1_OR_NEWER
-            var instances = FindObjectsOfType<T>(true);
-#else
-            var instances = Resources.FindObjectsOfTypeAll<T>();
-#endif
+            var instances = FindObjectsByType<T>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
 
             if (_instance == null)
             {

@@ -4,7 +4,7 @@ JeomseonScriptPack의 Singleton 기능을 독립된 Unity Package Manager 패키
 
 ## 요구 사항
 
-- Unity 2022.3 이상
+- Unity 6000.3.15f1 이상
 
 ## OpenUPM으로 설치
 

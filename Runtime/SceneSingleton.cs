@@ -2,25 +2,24 @@ using UnityEngine;
 
 namespace Jeomseon.Singleton
 {
-    // TODO(lifecycle): Additive Scene과 비활성 오브젝트가 함께 존재할 때 어느 씬의
-    // 인스턴스를 선택할지 명시적인 우선순위 정책을 제공해야 합니다.
     [DisallowMultipleComponent]
     public abstract class SingletonScene<T> : MonoBehaviour where T : SingletonScene<T>
     {
         private static T _instance;
         private bool _initialized;
 
+        /* TODO(P1-02, lifecycle): Additive Scene과 비활성 오브젝트가 함께 존재할 때 어느 씬의
+         * 인스턴스를 선택할지 명시적인 우선순위 정책을 제공해야 합니다.
+         */
         public static T Instance
         {
             get
             {
                 if (_instance == null)
                 {
-#if UNITY_2020_1_OR_NEWER
-                    var found = FindObjectsOfType<T>(true);
-#else
-                    var found = Resources.FindObjectsOfTypeAll<T>();
-#endif
+                    var found = FindObjectsByType<T>(
+                        FindObjectsInactive.Include,
+                        FindObjectsSortMode.None);
                     if (found != null && found.Length > 0)
                     {
                         _instance = found[0];
@@ -39,11 +38,9 @@ namespace Jeomseon.Singleton
 
         protected internal void Awake()
         {
-#if UNITY_2020_1_OR_NEWER
-            var instances = FindObjectsOfType<T>(true);
-#else
-            var instances = Resources.FindObjectsOfTypeAll<T>();
-#endif
+            var instances = FindObjectsByType<T>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
 
             if (_instance == null)
             {
