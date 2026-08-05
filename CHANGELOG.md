@@ -1,23 +1,8 @@
-# 변경 기록
 
-## [0.1.2] - 2026-07-29
 
-- asmdef의 `rootNamespace`와 Singleton 파일 위치를 namespace에 맞게 정리했습니다.
+- Unity 6000.5.7f1을 최소 지원 버전으로 상향했습니다.
 
-## [0.1.1] - 2026-07-29
 
-- MonoBehaviour Singleton 초기화를 확인하는 `Basic Usage` 샘플을 추가했습니다.
+## [0.1.3] - 2026-08-05
 
-## [Unreleased]
-
-### Documentation
-
-- 전역 상태, 씬 선택 정책 및 Resources 기반 설정의 리팩터링 지점에 한글 TODO 주석을 추가했습니다.
-
-## [0.1.0] - 2026-07-29
-
-### Added
-
-- JeomseonScriptPack에서 Singleton 모듈을 최초 분리했습니다.
-- 씬, 영구 MonoBehaviour 및 ScriptableObject 싱글턴 기반 타입을 추가했습니다.
-- EditMode 단위 테스트를 추가했습니다.
+- Unity 6000.5.7f1을 최소 지원 버전으로 상향했습니다.
