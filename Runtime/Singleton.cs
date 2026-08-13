@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jeomseon.Singleton
+namespace Jeomseon.Unity.Singleton
 {
     [DisallowMultipleComponent]
     public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>

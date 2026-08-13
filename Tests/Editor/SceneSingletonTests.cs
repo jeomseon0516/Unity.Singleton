@@ -1,4 +1,4 @@
-using Jeomseon.Singleton;
+using Jeomseon.Unity.Singleton;
 using NUnit.Framework;
 using UnityEngine;
 
