@@ -1,12 +1,10 @@
 {
-  "name": "Jeomseon.Unity.Singleton.Tests",
+  "name": "Jeomseon.Unity.Singleton.PlayModeTests",
   "rootNamespace": "Jeomseon.Tests",
   "references": [
     "Jeomseon.Unity.Singleton"
   ],
-  "includePlatforms": [
-    "Editor"
-  ],
+  "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
   "overrideReferences": false,

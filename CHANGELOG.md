@@ -16,9 +16,27 @@
 
 ## [Unreleased]
 
-### Documentation
+### Changed
 
-- 전역 상태, 씬 선택 정책 및 Resources 기반 설정의 리팩터링 지점에 한글 TODO 주석을 추가했습니다.
+- `Singleton<T>`에 애플리케이션/씬 생명주기 정책과 공개 `Lifetime` 조회 API를 추가했습니다.
+- `Singleton<T>`를 Unity 생명주기 호스트로 한정하고 공개 초기화 훅을 `Init()`에서
+  `OnSingletonInitialize()`로 변경했습니다.
+- 기반 `Awake()`/`OnDestroy()`/`OnApplicationQuit()`을 완전히 제거하고, sealed
+  `SingletonLifecycleRelay`가 Unity 메시지를 전달하도록 변경했습니다. 파생 타입의 같은 이름 메시지가
+  Singleton 초기화를 가리지 않습니다.
+- 명시적인 `OnSingletonDispose()` 훅과 공개 `IsInitialized` 상태를 추가했습니다.
+- Basic Usage 샘플을 일반 C# 서비스와 Singleton MonoBehaviour 호스트의 조합으로 변경했습니다.
+- Singleton 테스트를 모두 PlayMode로 전환해 reflection 없이 실제 `Awake()`/파괴/application quit
+  메시지를 검증합니다.
+- Domain Reload 비활성화 상태에서도 Play Mode 세션마다 정적 인스턴스와 종료 상태를 초기화합니다.
+
+### Removed
+
+- `SingletonScene<T>`와 `ScriptableObjectSingleton<T>`를 제거했습니다.
+
+### Added
+
+- 즉시 실행 가능한 `SingletonBasicUsageSample` Scene과 마이그레이션 문서를 추가했습니다.
 
 ## [0.1.0] - 2026-07-29
 
