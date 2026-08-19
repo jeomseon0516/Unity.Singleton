@@ -1,8 +1,8 @@
 {
   "name": "com.jeomseon.unity.singleton",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "displayName": "Jeomseon Unity Singleton",
-  "description": "Scene, persistent MonoBehaviour, and ScriptableObject singleton base types for Unity projects.",
+  "description": "Persistent MonoBehaviour singleton base type with explicit lifetime and initialization hooks for Unity projects.",
   "unity": "6000.5",
   "unityRelease": "7f1",
   "dependencies": {},
