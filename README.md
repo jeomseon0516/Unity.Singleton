@@ -4,7 +4,7 @@ Unity 생명주기가 필요한 전역 MonoBehaviour 호스트를 제공합니�
 
 ## 요구 사항
 
-- Unity 6000.5.7f1 이상
+- Unity 6000.6.0f1 이상
 
 ## OpenUPM으로 설치
 

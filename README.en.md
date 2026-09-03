@@ -4,7 +4,7 @@ Provides a global MonoBehaviour host for objects that require Unity lifecycle in
 
 ## Requirements
 
-- Unity 6000.5.7f1 or newer
+- Unity 6000.6.0f1 or newer
 
 ## Installation
 
