@@ -1,5 +1,9 @@
 # 변경 기록
 
+## [Unreleased]
+
+- Unity 최소 버전을 `6000.5.7f1` → `6000.6.0f1`로 상향했습니다. 코드·API 변경은 없습니다.
+
 ## [0.2.0] - 2026-08-13
 
 - **(Breaking)** 네임스페이스를 `Jeomseon.Singleton` → `Jeomseon.Unity.Singleton`으로 변경했습니다.
