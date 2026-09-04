@@ -8,18 +8,31 @@ Unity 생명주기가 필요한 전역 MonoBehaviour 호스트를 제공합니�
 
 ## OpenUPM으로 설치
 
+프로젝트의 `Packages/manifest.json`에 OpenUPM scoped registry를 한 번 등록합니다.
+
 ```json
 {
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.jeomseon"
+      ]
+    }
+  ],
   "dependencies": {
-    "com.jeomseon.unity.singleton": "0.1.0"
+    "com.jeomseon.unity.singleton": "0.3.1"
   }
 }
 ```
 
 ## Git URL로 설치
 
+Unity Package Manager의 `Install package from git URL`에 다음 주소를 사용합니다.
+
 ```text
-https://github.com/jeomseon0516/Unity.Singleton.git#v0.1.1
+https://github.com/jeomseon0516/Unity.Singleton.git#v0.3.1
 ```
 
 ## 포함 기능
