@@ -8,7 +8,7 @@
 
 - **(Breaking)** 네임스페이스를 `Jeomseon.Singleton` → `Jeomseon.Unity.Singleton`으로 변경했습니다.
   워크스페이스 전체 네임스페이스 규칙(패키지 rootNamespace는 `Jeomseon.Unity.<패키지 폴더명>`,
-  `AGENTS.md` 참고)을 적용한 것으로, 폴더 구조 변경은 없습니다.
+  하위 namespace는 폴더 경로를 따름)을 적용한 것으로, 폴더 구조 변경은 없습니다.
 
 ## [0.1.2] - 2026-07-29
 
